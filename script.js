@@ -29,7 +29,9 @@ function fetchLocation(lat, lon) {
       let data = "";
       let dataContainer = document.querySelector(".data-container");
       data = `
-        <h2>Your Result</h2>
+      <h1>TimeZone API</h1>
+    <h1>Your Current Time Zone</h1>
+        
         <p>Name Of Time Zone: ${result.results[0].timezone.name}</p>
         <div class="span1">
           <span><b>Lat:</b> ${lat}</span>
@@ -67,12 +69,13 @@ addBtn.addEventListener("click", (event) => {
         if (geocodingResult.features.length === 0) {
           // Address not found
           document.getElementById("error").innerText =
-            "TimeZone could not be found";
+            "TimeZone could not be found!";
         } else {
           const dataContainer2 = document.createElement("div");
           dataContainer2.classList.add("data-container2");
           document.body.appendChild(dataContainer2);
           Data = `
+            
             <h2>Your Result</h2>
             <p>Name Of Time Zone: ${geocodingResult.features[0].properties.timezone.name}</p>
             <div class="span1">
